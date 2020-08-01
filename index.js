@@ -5,8 +5,9 @@ const listener = (req, res) => {
   console.log("Parsing request...");
   const queryData = url.parse(req.url, true).query;
   console.log("hub challenge:", queryData["hub.challenge"]);
+  res.writeHeader(200);
   if (queryData["hub.challenge"]) {
-    res.status(200).send(queryData["hub.challenge"]);
+    res.send(queryData["hub.challenge"]);
   }
   console.log("Done..." + res);
   res.end();
