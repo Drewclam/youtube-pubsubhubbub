@@ -9,7 +9,7 @@ const listener = (req, res) => {
   if (queryData["hub.challenge"]) {
     res.end(queryData["hub.challenge"]);
   }
-  console.log("Done..." + re);
+  console.log("Done...");
   res.end();
 };
 
