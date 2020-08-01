@@ -7,9 +7,9 @@ const listener = (req, res) => {
   console.log("hub challenge:", queryData["hub.challenge"]);
   res.writeHeader(200);
   if (queryData["hub.challenge"]) {
-    res.write(queryData["hub.challenge"]);
+    res.end(queryData["hub.challenge"]);
   }
-  console.log("Done..." + res);
+  console.log("Done..." + re);
   res.end();
 };
 
