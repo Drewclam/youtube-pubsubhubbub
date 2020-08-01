@@ -7,10 +7,10 @@ const listener = (req, res) => {
   console.log(queryData);
   res.writeHead(200);
   if (queryData["hub.challenge"]) {
-    res.end(queryData["hub.challenge"]);
+    res.write(queryData["hub.challenge"]);
   }
-
-  res.end("Hello world");
+  console.log("Done..." + res);
+  res.end();
 };
 
 const server = http.createServer(listener);
